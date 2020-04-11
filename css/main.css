@@ -1,7 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
 @import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,300,700italic,700,500&subset=latin,latin-ext");
-
+* {
+    margin: 0;
+    padding: 0;
+}
 
 /*Theodore classes*/
 
@@ -122,10 +125,6 @@ a {
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
   transition:  color 300ms, background-color 300ms;
-}
-
-a:hover, a:focus {
-  color: #d43133;
 }
 
 hr {
@@ -329,127 +328,41 @@ input.search-form:hover::-webkit-input-placeholder {
 input.search-form:hover {
   width: 180px;
 }
-
+.navbar-toggle {
+    z-index: 2;
+    background-color:rgba(3,3,3, 0.6)
+}
+.nav.navbar-nav {
+    position:relative;
+}
 .navbar-brand {
-  padding: 0;
-  margin:0;
+    margin:0;
+    padding:0;
+    position: absolute;
+    left:0;
+    top:0;
 }
 
-.navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-  background: #363435;
-  padding: 15px 0;
-  padding-bottom: 0;
+.nav.navbar-nav .links, .navbar-nav .dropdown .dropLinks, .navbar-nav .dropdown .dropbtn {
+    background-color:black;
+    display:inline-block;
+    top:10px;
+    color:white;
 }
-
- .navbar-nav{
-  margin-top: 12px;
- }
-
-.navbar-nav>li{
-  margin-left: 35px;
-  padding-bottom: 28px;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  padding: 5px 12px;
-  margin: 0;
-  border-radius: 3px;
-  color: #fff;
-  line-height: 24px;
-  display: inline-block;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #c52d2f;
-  color: #fff;
-}
-
-.navbar-inverse {
-  border: none;
-}
-
-.navbar-inverse .navbar-brand {
-  font-size: 36px;
-  line-height: 50px;
-  color: #fff;
-}
-
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus,
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
+.dropdown:hover .dropbtn {
   background-color: #c52d2f;
-  color: #fff;
 }
-
-.navbar-inverse .navbar-nav .dropdown-menu {
-  background-color: rgba(0,0,0,.85);
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
-  border: 0;
-  padding: 0;
-  margin-top: 0;
-  border-top: 0;
-  border-radius: 0;
-  left: 0;
-}
-
-.navbar-inverse .navbar-nav .dropdown-menu:before{
-  position: absolute;
-  top:0;
-}
-
-.navbar-inverse .navbar-nav .dropdown-menu > li > a {
-  padding: 8px 15px;
-  color: #fff;
-}
-
-.navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
-.navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
-.navbar-inverse .navbar-nav .dropdown-menu > li.active > a {
-  background-color: #c52d2f;
-  color: #fff;
-}
-
-.navbar-inverse .navbar-nav .dropdown-menu > li:last-child > a {
-  border-radius: 0 0 3px 3px;
-}
-
-.navbar-inverse .navbar-nav .dropdown-menu > li.divider {
-  background-color: transparent;
-}
-
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-top: 0;
-  padding-bottom: 0;
-}
-/* Style The Dropdown Button */
-.dropbtn {
-  background-color: #333;
-  color: white;
-  padding: 0px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -457,24 +370,22 @@ input.search-form:hover {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #c52d2f;
-}
+/* dropdown ends */
 
 /*************************
 *******Home Page******
@@ -545,7 +456,7 @@ input.search-form:hover {
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
   transition: opacity ease-in-out 500ms;
-  z-index: 1;
+  z-index: -1;
 }
 
 #main-slider .prev,
@@ -2777,45 +2688,6 @@ font-family: 'Open Sans', sans-serif;
 }
 a.clickable { color: inherit; }
 a.clickable:hover { text-decoration:none; }
-
-/*Scroll top CSS*/
-
-.scroll-top-wrapper {
-    position: fixed;
-    opacity: 0;
-    visibility: hidden;
-	overflow: hidden;
-	text-align: center;
-	z-index: 99999999;
-    background-color: #FF3A3A;
-	color: #eeeeee;
-	width: 50px;
-	height: 48px;
-	line-height: 48px;
-	right: 30px;
-	bottom: 30px;
-	padding-top: 2px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-.scroll-top-wrapper:hover {
-	background-color: #888888;
-}
-.scroll-top-wrapper.show {
-    visibility:visible;
-    cursor:pointer;
-	opacity: 1.0;
-}
-.scroll-top-wrapper i.fa {
-	line-height: inherit;
-}
 
 
 /*
